@@ -1,5 +1,6 @@
 require_relative '../gear'
 require_relative '../obscuring_references'
+require_relative '../revealing_references'
 
 RSpec.describe 'POOD App' do
 
@@ -39,6 +40,25 @@ RSpec.describe 'POOD App' do
     it 'Responds to proper methods' do
       expect(subject).to respond_to(:data)
       expect(subject).to respond_to(:diameters)
+    end
+
+    it 'Responds to diameters properly' do
+      expect(subject.diameters).to match([662, 668, 619, 639])
+    end
+
+  end
+
+  context 'RevealingReferences' do
+    let!(:subject) {RevealingReferences.new([[622, 20], [622, 23], [559, 30], [559, 40]])}
+
+    it 'Initiated properly' do
+      expect(subject).to be_an_instance_of(RevealingReferences)
+    end
+
+    it 'Responds to proper methods' do
+      expect(subject).to respond_to(:wheels)
+      expect(subject).to respond_to(:diameters)
+      expect(subject).to respond_to(:wheelify)
     end
 
     it 'Responds to diameters properly' do
