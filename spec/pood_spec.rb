@@ -14,8 +14,7 @@ RSpec.describe 'POOD App' do
     it 'Responds to proper methods' do
       expect(subject).to respond_to(:chainring)
       expect(subject).to respond_to(:cog)
-      expect(subject).to respond_to(:rim)
-      expect(subject).to respond_to(:tire)
+      expect(subject).to respond_to(:wheel)
 
     end
 
